@@ -1,0 +1,17 @@
+background-blur-radius = 0
+background-opacity = 0.9999
+window-padding-x=4
+window-padding-y=2
+window-padding-balance=true
+font-size = 15.0
+font-family = Menlo
+font-feature=-calt,-liga,-dlig
+theme = oxocarbon
+custom-shader-animation=false
+window-colorspace = "display-p3"
+font-thicken=true
+auto-update=check
+auto-update-channel=tip
+
+
+

@@ -1,0 +1,28 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Ronit Gandhi
+	email = rg@ronitgandhi.xyz
+
+[pull]
+	rebase = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[rerere]
+	enabled = true
+
+[push]
+  autoSetupRemote = true
+  default = current
+
+[core]
+  pager = delta
+
+
+[delta]
+  line-numbers =true
+
