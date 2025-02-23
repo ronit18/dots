@@ -1,0 +1,116 @@
+#!/bin/bash
+# Configuration
+DOWNLOAD_DIR=~/yt
+
+# Colors
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+YELLOW="\033[0;33m"
+NC="\033[0m" # No Color
+
+# Parse command-line options
+while getopts "l:p:qf:" opt; do
+  case $opt in
+  l)
+    URL=$OPTARG
+    ;;
+  p)
+    IS_PLAYLIST=true
+    PLAYLIST_NAME=$OPTARG
+    ;;
+  q)
+    IS_LOW=true
+    ;;
+  f)
+    FILE=$OPTARG
+    ;;
+  *)
+    echo -e "${RED}Usage: $0 [-l <URL>] [-p playlist-name] [-q] [-f <FILE>]${NC}"
+    exit 1
+    ;;
+  esac
+done
+
+# Check if URL or file is provided
+if [[ -z "$URL" && -z "$FILE" ]]; then
+  echo -e "${RED}No URL or file provided. Please use the [-l <URL>] or [-f <FILE>] option.${NC}"
+  exit 1
+fi
+
+# Create download directory if it doesn't exist
+mkdir -p "$DOWNLOAD_DIR"
+
+# Function to sanitize folder names
+sanitize_name() {
+  echo "$1" | tr -d '[:punct:]' | tr ' ' '_'
+}
+
+# Determine format based on the -q flag
+if [[ "$IS_LOW" == true ]]; then
+  FORMAT="bestvideo[height<=1080]+bestaudio/best"
+else
+  FORMAT="bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"
+fi
+
+# Function to download a single video
+download_video() {
+  local url=$1
+  echo -e "${YELLOW}Downloading single video from: $url${NC}"
+
+  yt-dlp \
+    --output "$DOWNLOAD_DIR/%(title)s.%(ext)s" \
+    --format "$FORMAT" \
+    --merge-output-format mp4 \
+    --ignore-errors \
+    --continue \
+    "$url"
+
+  if [[ $? -eq 0 ]]; then
+    echo -e "${GREEN}Video downloaded successfully to: $DOWNLOAD_DIR${NC}"
+  else
+    echo -e "${RED}Failed to download the video: $url${NC}"
+  fi
+}
+
+if [[ -n "$FILE" ]]; then
+  echo -e "${YELLOW}Reading links from file: $FILE${NC}"
+  while IFS= read -r line; do
+    [[ -z "$line" ]] && continue # Skip empty lines
+    download_video "$line"
+  done <"$FILE"
+else
+  if [[ "$IS_PLAYLIST" == true ]]; then
+    echo -e "${YELLOW}Downloading playlist from: $URL${NC}"
+
+    if [[ -n "$PLAYLIST_NAME" ]]; then
+      PLAYLIST_FOLDER="$DOWNLOAD_DIR/$PLAYLIST_NAME"
+    else
+      PLAYLIST_TITLE=$(yt-dlp --get-playlist-title "$URL" 2>/dev/null)
+      if [[ -z "$PLAYLIST_TITLE" ]]; then
+        PLAYLIST_TITLE="playlist_$(date +%Y%m%d_%H%M%S)"
+      fi
+      PLAYLIST_TITLE=$(sanitize_name "$PLAYLIST_TITLE")
+      PLAYLIST_FOLDER="$DOWNLOAD_DIR/$PLAYLIST_TITLE"
+    fi
+
+    mkdir -p "$PLAYLIST_FOLDER"
+    echo -e "${YELLOW}Downloading to folder: $PLAYLIST_FOLDER${NC}"
+
+    yt-dlp \
+      --yes-playlist \
+      --output "$PLAYLIST_FOLDER/%(playlist_index)s-%(title)s.%(ext)s" \
+      --format "$FORMAT" \
+      --merge-output-format mp4 \
+      --ignore-errors \
+      --continue \
+      "$URL"
+
+    if [[ $? -eq 0 ]]; then
+      echo -e "${GREEN}Playlist downloaded successfully to: $PLAYLIST_FOLDER${NC}"
+    else
+      echo -e "${RED}Some errors occurred during download. Check the output above for details.${NC}"
+    fi
+  else
+    download_video "$URL"
+  fi
+fi

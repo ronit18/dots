@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+read -p "Are you sure you want to perform a complete macOS cleanup? This cannot be undone. [y/N]: " -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  echo "Cleanup canceled."
+  exit 1
+fi
+
+# Empty Trash
+echo "Emptying Trash on all mounted volumes and the main HDD..."
+sudo rm -rf /Volumes/*/.Trashes &>/dev/null
+sudo rm -rf ~/.Trash/* &>/dev/null
+
+# Clear System Log Files
+echo "Clearing system log files..."
+sudo rm -rf /private/var/log/asl/*.asl &>/dev/null
+sudo rm -rf /Library/Logs/DiagnosticReports/* &>/dev/null
+sudo rm -rf /Library/Logs/* &>/dev/null
+rm -rf ~/Library/Containers/com.apple.mail/Data/Library/Logs/Mail/* &>/dev/null
+rm -rf ~/Library/Logs/CoreSimulator/* &>/dev/null
+
+# Cleanup iOS Applications
+echo "Cleaning up iOS applications..."
+rm -rf ~/Music/iTunes/iTunes\ Media/Mobile\ Applications/* &>/dev/null
+
+# Remove iOS Device Backups
+echo "Removing iOS device backups..."
+rm -rf ~/Library/Application\ Support/MobileSync/Backup/* &>/dev/null
+
+# Cleanup XCode Derived Data and Archives
+echo "Cleaning up XCode derived data and archives..."
+rm -rf ~/Library/Developer/Xcode/DerivedData/* &>/dev/null
+rm -rf ~/Library/Developer/Xcode/Archives/* &>/dev/null
+
+# Cleanup Homebrew Cache
+echo "Cleaning up Homebrew cache..."
+brew cleanup --force -s &>/dev/null
+rm -rf /Library/Caches/Homebrew/* &>/dev/null
+brew tap --repair &>/dev/null
+
+# Cleanup Ruby Gems
+echo "Cleaning up old versions of Ruby gems..."
+gem cleanup &>/dev/null
+
+# Cleanup npm Cache
+echo "Cleaning up npm cache and old modules..."
+npm cache clean --force &>/dev/null
+rm -rf ~/.npm &>/dev/null
+
+# Cleanup Safari Cache
+echo "Cleaning up Safari cache..."
+rm -rf ~/Library/Caches/com.apple.Safari &>/dev/null
+rm -rf ~/Library/Safari/* &>/dev/null
+
+# Clear Temporary Files
+echo "Clearing temporary files..."
+sudo rm -rf /private/var/folders/* &>/dev/null
+
+# Clear User Cache
+echo "Clearing user cache files..."
+rm -rf ~/Library/Caches/* &>/dev/null
+
+# Purge inactive memory
+echo "Purging inactive memory..."
+sudo purge &>/dev/null
+
+echo "Cleanup completed! 🎉"
