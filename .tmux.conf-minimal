@@ -8,7 +8,7 @@ bind-key C-a last-window
 
 bind-key -n C-t new-window
 
-bind c kill-window
+bind c kill-pane
 
 bind r source-file ~/.tmux.conf \; display-message "Config reloaded"
 
