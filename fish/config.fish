@@ -29,3 +29,7 @@ set --universal pure_check_for_new_release false
 set --universal pure_enable_single_line_prompt true
 
 source ~/.config/fish/alias.fish
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
