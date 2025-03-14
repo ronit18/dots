@@ -108,3 +108,22 @@ alias pyserve="python3 -m http.server"
 alias up="python3 -m http.server"
 alias ff='fastfetch'
 alias g='git'
+alias ytd='yt-download '
+alias mvenv 'uv venv .venv'
+alias svenv 'source .venv/bin/activate.fish'
+
+function sshub
+    ssh -i ~/.ssh/.pem/aws-ec2.pem ubuntu@$argv
+end
+
+function sshec
+    ssh -i ~/.ssh/.pem/aws-ec2.pem ec2-user@$argv
+end
+
+function scpup
+    scp -i ~/.ssh/.pem/aws-ec2.pem $argv[2] ubuntu@$argv[1]:/home/ubuntu/
+end
+
+function scpdown
+    scp -i ~/.ssh/.pem/aws-ec2.pem ubuntu@$argv[1]:$argv[2] .
+end
