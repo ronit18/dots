@@ -1,5 +1,7 @@
 set fish_greeting # Supresses fish's intro message
 set TERM xterm-256color
+set fish_cursor_default block
+set fish_cursor_insert block
 
 # Enable vim keybindings
 function fish_user_key_bindings
