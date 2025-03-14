@@ -5,8 +5,10 @@ set fish_cursor_insert block
 
 # Enable vim keybindings
 function fish_user_key_bindings
-    fish_vi_key_bindings
+    fish_default_key_bindings -M insert
+    fish_vi_key_bindings --no-erase insert
 end
+bind -M insert ctrl-n down-or-search
 
 # Homebrew configuration
 eval (/opt/homebrew/bin/brew shellenv)
