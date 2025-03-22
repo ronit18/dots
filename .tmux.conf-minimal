@@ -6,7 +6,8 @@ unbind C-b
 set -g prefix `
 bind-key ` last-window
 
-bind-key -n C-t new-window
+unbind t
+bind-key t new-window
 
 bind c kill-pane
 
