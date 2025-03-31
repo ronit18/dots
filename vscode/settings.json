@@ -1,0 +1,217 @@
+{
+	"editor.insertSpaces": false,
+	"editor.mouseWheelZoom": false,
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": "active",
+	"editor.guides.bracketPairsHorizontal": true,
+	"vim.easymotion": true,
+	"vim.incsearch": true,
+	"workbench.tree.enableStickyScroll": false,
+	"workbench.tree.renderIndentGuides": "none",
+	"workbench.tree.indent": 8,
+	"explorer.compactFolders": false,
+	"vim.useSystemClipboard": true,
+	"editor.linkedEditing": true,
+	"vim.useCtrlKeys": true,
+	"vim.hlsearch": true,
+	"vim.sneak": true,
+	"github.gitProtocol": "ssh",
+	"editor.selectionHighlight": false,
+	"editor.suggest.snippetsPreventQuickSuggestions": false,
+	"npm.packageManager": "pnpm",
+	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+	"prettier.useTabs": true,
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"files.associations": {
+		"*.html": "html",
+		"*.js": "javascript"
+	},
+	"git.confirmSync": false,
+	"git.showPushSuccessNotification": true,
+	"editor.suggestSelection": "first",
+	"terminal.integrated.gpuAcceleration": "on",
+	"vim.insertModeKeyBindings": [
+		{
+			"before": ["j", "k"],
+			"after": ["<esc>"]
+		},
+		{
+			"before": ["k", "j"],
+			"after": ["<esc>"]
+		}
+	],
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": ["<leader>", "d"],
+			"after": ["d", "d"]
+		},
+		{
+			"before": ["<leader>", "x"],
+			"commands": ["editor.action.close"]
+		},
+		{
+			"before": ["<leader>", "s"],
+			"commands": ["workbench.action.files.save"]
+		},
+		{
+			"before": ["<C-n>"],
+			"commands": [":nohl"]
+		},
+		{
+			"before": ["K"],
+			"commands": ["lineBreakInsert"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "w"],
+			"commands": ["workbench.action.splitEditor"]
+		},
+		{
+			"before": ["<leader>", "e"],
+			"commands": ["workbench.action.toggleSidebarVisibility"]
+		},
+		{
+			"before": ["<leader>", "h"],
+			"after": ["_"]
+		},
+		{
+			"before": ["<leader>", "l"],
+			"after": ["$"]
+		}
+	],
+	"vim.leader": "<space>",
+	"vim.handleKeys": {
+		"<C-a>": false,
+		"<C-f>": false,
+		"<C-d>": false,
+		"<C-c>": false,
+		"<C-x>": false,
+		"<C-v>": false,
+		"<C-b>": false,
+		"<C-w>": false,
+		"<C-k>": false,
+		"<C-y>": false
+	},
+	"editor.minimap.scale": 2,
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"material-icon-theme.saturation": 1,
+	"material-icon-theme.folders.color": "#42a5f5",
+	"material-icon-theme.activeIconPack": "react_redux",
+	"material-icon-theme.opacity": 1,
+	"terminal.integrated.defaultProfile.windows": "Command Prompt",
+	"emmet.triggerExpansionOnTab": true,
+	"gitlens.advanced.messages": {
+		"suppressFileNotUnderSourceControlWarning": true
+	},
+	"window.titleSeparator": " - ",
+	"vim.smartRelativeLine": true,
+	"editor.renderWhitespace": "none",
+	"editor.renderControlCharacters": false,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"prettier.tabWidth": 4,
+	"window.title": "${dirty}${activeEditorLong}${separator}",
+	"tailwindCSS.emmetCompletions": true,
+	"git.enableSmartCommit": true,
+	"editor.occurrencesHighlight": "off",
+	"material-icon-theme.hidesExplorerArrows": true,
+	"editor.unicodeHighlight.allowedLocales": {
+		"es": true
+	},
+	"gitlens.hovers.currentLine.over": "line",
+	"terminal.integrated.defaultProfile.linux": "zsh",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.formatOnSave": true
+	},
+	"editor.cursorSmoothCaretAnimation": "on",
+	"workbench.list.smoothScrolling": true,
+	"editor.smoothScrolling": true,
+	"terminal.integrated.smoothScrolling": true,
+	"explorer.confirmDelete": false,
+	"git.autofetch": true,
+	"workbench.tips.enabled": false,
+	"gitlens.gitCommands.skipConfirmations": [
+		"fetch:command",
+		"switch:command",
+		"stash-push:command"
+	],
+	"editor.fontSize": 14,
+	"gitlens.codeLens.enabled": false,
+	"editor.quickSuggestionsDelay": 2,
+	"editor.useTabStops": false,
+	"editor.stickyTabStops": false,
+	"workbench.reduceMotion": "off",
+	"debug.console.acceptSuggestionOnEnter": "on",
+	"prettier.singleQuote": true,
+	"editor.cursorBlinking": "expand",
+	"terminal.integrated.env.linux": {},
+	"editor.inlineSuggest.enabled": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": true,
+		"markdown": true,
+		"scminput": false
+	},
+	"editor.inlayHints.enabled": "offUnlessPressed",
+	"editor.guides.highlightActiveIndentation": "always",
+	"workbench.sideBar.location": "right",
+	"workbench.editor.empty.hint": "hidden",
+	"editor.minimap.size": "fit",
+	"editor.minimap.showSlider": "always",
+	"editor.minimap.enabled": false,
+	"editor.stickyScroll.enabled": false,
+	"workbench.iconTheme": "material-icon-theme",
+	"terminal.integrated.mouseWheelZoom": true,
+	"window.commandCenter": false,
+	"workbench.colorTheme": "oXocarbonix-twilight",
+	"cursor.cpp.disabledLanguages": ["scminput"],
+	"explorer.fileNesting.patterns": {
+		"*.ts": "${capture}.js",
+		"*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+		"*.jsx": "${capture}.js",
+		"*.tsx": "${capture}.ts",
+		"tsconfig.json": "tsconfig.*.json",
+		"package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+		"*.sqlite": "${capture}.${extname}-*",
+		"*.db": "${capture}.${extname}-*",
+		"*.sqlite3": "${capture}.${extname}-*",
+		"*.db3": "${capture}.${extname}-*",
+		"*.sdb": "${capture}.${extname}-*",
+		"*.s3db": "${capture}.${extname}-*"
+	},
+	"geminicodeassist.project": "",
+	"geminicodeassist.inlineSuggestions.enableAuto": true,
+	"diffEditor.codeLens": true,
+	"workbench.editorAssociations": {
+		"*.copilotmd": "vscode.markdown.preview.editor",
+		"*.sql": "default"
+	},
+	"terminal.integrated.fontSize": 13
+}
+
