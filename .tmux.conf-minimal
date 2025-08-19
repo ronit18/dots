@@ -51,4 +51,8 @@ set -g mouse on
 
 set-option -g history-limit 5000
 
-
+# Pane resizing with prefix key combinations
+bind - resize-pane -D 5    # Decrease horizontal split (make current pane shorter)
+bind + resize-pane -U 5    # Increase horizontal split (make current pane taller)
+bind < resize-pane -L 5    # Decrease vertical split (make current pane narrower)
+bind > resize-pane -R 5    # Increase vertical split (make current pane wider)

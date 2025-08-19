@@ -3,7 +3,7 @@
 function __docker_debug
     set -l file "$BASH_COMP_DEBUG_FILE"
     if test -n "$file"
-        echo "$argv" >>$file
+        echo "$argv" >> $file
     end
 end
 
@@ -19,7 +19,7 @@ function __docker_perform_completion
     __docker_debug "last arg: $lastArg"
 
     # Disable ActiveHelp which is not supported for fish shell
-    set -l requestComp "DOCKER_ACTIVE_HELP=0 $args[1] __completeNoDesc $args[2..-1] $lastArg"
+    set -l requestComp "DOCKER_ACTIVE_HELP=0 $args[1] __complete $args[2..-1] $lastArg"
 
     __docker_debug "Calling $requestComp"
     set -l results (eval $requestComp 2> /dev/null)
@@ -215,18 +215,18 @@ end
 # so we can properly delete any completions provided by another script.
 # Only do this if the program can be found, or else fish may print some errors; besides,
 # the existing completions will only be loaded if the program can be found.
-if type -q docker
+if type -q "docker"
     # The space after the program name is essential to trigger completion for the program
     # and not completion of the program name itself.
     # Also, we use '> /dev/null 2>&1' since '&>' is not supported in older versions of fish.
-    complete --do-complete "docker " >/dev/null 2>&1
+    complete --do-complete "docker " > /dev/null 2>&1
 end
 
 # Remove any pre-existing completions for the program since we will be handling all of them.
 complete -c docker -e
 
 # this will get called after the two calls below and clear the $__docker_perform_completion_once_result global
-complete -c docker -n __docker_clear_perform_completion_once_result
+complete -c docker -n '__docker_clear_perform_completion_once_result'
 # The call to __docker_prepare_completions will setup __docker_comp_results
 # which provides the program's completion choices.
 # If this doesn't require order preservation, we don't use the -k flag

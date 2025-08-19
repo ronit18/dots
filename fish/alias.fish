@@ -12,12 +12,12 @@ alias docs='cd ~/Documents/'
 alias desk='cd ~/Desktop/'
 alias dl='cd ~/Downloads/'
 alias yt='cd ~/yt/'
-alias tmp='cd ~/dev/tmp/'
+alias tmp='cd ~/usr/tmp/'
 alias cx='z'
 alias rmgitcache='rm -r ~/.cache/git'
 alias c='code '
-alias tmux='tmux'
-alias dev='cd ~/dev/'
+alias dev='cd ~/usr/'
+alias usr='cd ~/usr/'
 
 # Git aliases
 alias gs='git status'
@@ -32,7 +32,7 @@ alias gco='git checkout'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gd='git diff'
-alias gl='git log'
+alias gl='git log --graph --oneline'
 alias gpl='git pull'
 alias gpu='git push'
 alias grm='git rm'
@@ -42,6 +42,7 @@ alias lz='lazygit'
 alias gitlog='git log --format=%s '
 
 alias nm="nmap -sC -sV -oN nmap"
+alias nma="nmap -A -T4 -sC -sV -oN nmap"
 
 # Docker
 alias dps="docker ps"
@@ -114,6 +115,11 @@ alias svenv 'source .venv/bin/activate.fish'
 
 function sshub
     ssh -i ~/.ssh/.pem/aws-ec2.pem ubuntu@$argv
+end
+
+function cz
+    cx $argv
+    ls
 end
 
 function sshec

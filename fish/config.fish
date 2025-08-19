@@ -14,22 +14,31 @@ bind -M insert ctrl-n down-or-search
 eval (/opt/homebrew/bin/brew shellenv)
 
 # PATH modifications
-set -x PATH $HOME/.local/bin /opt/homebrew/bin $HOME/.config/emacs/bin $PATH
+set -x PATH $HOME/.local/bin /opt/homebrew/bin $PATH
 
 # History settings
 set -U fish_history_limit 5000
 set -U fish_history_file ~/.fish_history
 
-set -gx KUBECONFIG ~/.kube/config
-
-
 # Use the Pure prompt
 set --universal pure_color_system_time pure_color_mute
 set --universal pure_check_for_new_release false
 set --universal pure_enable_single_line_prompt true
+set --universal pure_check_for_new_release false
+set --universal pure_color_current_directory '#FA7CA6'
 
 source ~/.config/fish/alias.fish
 
 # bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+if test -d "$HOME/.bun/bin"
+    set --export BUN_INSTALL "$HOME/.bun"
+    set --export PATH "$BUN_INSTALL/bin" $PATH
+end
+
+# pnpm
+set -gx PNPM_HOME /Users/ronitgandhi/Library/pnpm
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+
+zoxide init fish | source

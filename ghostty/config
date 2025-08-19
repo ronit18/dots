@@ -1,17 +1,13 @@
-background-blur-radius = 0
-background-opacity = 0.9999
-window-padding-x=4
-window-padding-y=2
-window-padding-balance=true
 font-size = 15.0
-font-family = Menlo
-font-feature=-calt,-liga,-dlig
-theme = oxocarbon
+font-family = "Geist Mono"
+font-feature=-liga
+desktop-notifications=false
+title=👻
+macos-titlebar-proxy-icon=hidden
+theme = "oxocarbon"
+window-colorspace="display-p3"
 custom-shader-animation=false
-window-colorspace = "display-p3"
 font-thicken=true
-auto-update=check
-auto-update-channel=tip
-
-
-
+bell-features = no-system,no-audio,no-attention,no-title
+mouse-hide-while-typing = true
+#window-padding-balance = true
