@@ -83,23 +83,44 @@ tmux_conf_theme=enabled
 # tmux_conf_theme_colour_17="#e0def4"   
 
 # Carbonfox colors for tmux
-tmux_conf_theme_colour_1="#141823"  
-tmux_conf_theme_colour_2="#282828"  
-tmux_conf_theme_colour_3="#dfdfe0"  
-tmux_conf_theme_colour_4="#ee5396"  
-tmux_conf_theme_colour_5="#08bdba"  
-tmux_conf_theme_colour_6="#0c0c0c"  
-tmux_conf_theme_colour_7="#f2f4f8"  
-tmux_conf_theme_colour_8="#161616" 
-tmux_conf_theme_colour_9="#08bdba" 
-tmux_conf_theme_colour_10="#be95ff"
-tmux_conf_theme_colour_11="#25be6a"
-tmux_conf_theme_colour_12="#484848"
-tmux_conf_theme_colour_13="#f2f4f8"
-tmux_conf_theme_colour_14="#0c0c0c"
-tmux_conf_theme_colour_15="#141823"
-tmux_conf_theme_colour_16="#f16da6"
-tmux_conf_theme_colour_17="#e4e4e5"
+# tmux_conf_theme_colour_1="#141823"  
+# tmux_conf_theme_colour_2="#282828"  
+# tmux_conf_theme_colour_3="#dfdfe0"  
+# tmux_conf_theme_colour_4="#ee5396"  
+# tmux_conf_theme_colour_5="#08bdba"  
+# tmux_conf_theme_colour_6="#0c0c0c"  
+# tmux_conf_theme_colour_7="#f2f4f8"  
+# tmux_conf_theme_colour_8="#161616" 
+# tmux_conf_theme_colour_9="#08bdba" 
+# tmux_conf_theme_colour_10="#be95ff"
+# tmux_conf_theme_colour_11="#25be6a"
+# tmux_conf_theme_colour_12="#484848"
+# tmux_conf_theme_colour_13="#f2f4f8"
+# tmux_conf_theme_colour_14="#0c0c0c"
+# tmux_conf_theme_colour_15="#141823"
+# tmux_conf_theme_colour_16="#f16da6"
+# tmux_conf_theme_colour_17="#e4e4e5"
+
+# Oxocarbon-twilight
+# Enhanced color scheme with vibrant pink and cyan accents
+tmux_conf_theme_colour_1="#151822"      # Main background
+tmux_conf_theme_colour_2="#2a2a3e"      # Secondary dark background
+tmux_conf_theme_colour_3="#5d6084"      # Inactive/muted text
+tmux_conf_theme_colour_4="#ff7eb6"      # Bright pink accent
+tmux_conf_theme_colour_5="#FA973B"      # Orange accent
+tmux_conf_theme_colour_6="#0f111a"      # Very dark background
+tmux_conf_theme_colour_7="#e6e9ef"      # Main foreground text
+tmux_conf_theme_colour_8="#151822"      # Background
+tmux_conf_theme_colour_9="#3ACECC"      # Bright cyan accent
+tmux_conf_theme_colour_10="#7d6b9d"     # Muted purple (for inactive tabs)
+tmux_conf_theme_colour_11="#3ddbd9"     # Cyan/teal accent
+tmux_conf_theme_colour_12="#5d6084"     # Muted gray
+tmux_conf_theme_colour_13="#b8b8d0"     # Muted foreground
+tmux_conf_theme_colour_14="#1a1c2e"     # Dark background alt
+tmux_conf_theme_colour_15="#151822"     # Background
+tmux_conf_theme_colour_16="#ff69b4"     # Vibrant pink (active tab - more eye-catching)
+tmux_conf_theme_colour_17="#e6e9ef"     # Foreground
+
 
 # window style
 tmux_conf_theme_window_fg="default"
