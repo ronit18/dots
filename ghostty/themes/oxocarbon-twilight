@@ -1,0 +1,45 @@
+# Basic colors
+background = #151822
+foreground = #e6e9ef
+
+# Cursor
+cursor-color = #e6e9ef
+cursor-style = block
+
+# Selection
+selection-background = #6c5da4
+selection-foreground = #e6e9ef
+
+# ANSI Colors (0-15)
+# Black
+palette = 0=#151822
+palette = 8=#5d6084
+
+# Red
+palette = 1=#ff7eb6
+palette = 9=#ff7eb6
+
+# Green
+palette = 2=#3ddbd9
+palette = 10=#be95ff
+
+# Yellow
+palette = 3=#FA973B
+palette = 11=#FA973B
+
+# Blue
+palette = 4=#75A5F8
+palette = 12=#77A9FF
+
+# Magenta
+palette = 5=#c49ff5
+palette = 6=#c49ff5
+
+# Cyan
+palette = 6=#3ACECC
+palette = 14=#3ddbd9
+
+# White
+palette = 7=#e6e9ef
+palette = 15=#ffffff
+

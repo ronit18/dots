@@ -1,13 +1,21 @@
-font-size = 15.0
+shell-integration = fish
+font-size = 15
 font-family = "Geist Mono"
 font-feature=-liga
 desktop-notifications=false
+bell-features = no-system,no-audio,no-attention,no-title
 title=👻
 macos-titlebar-proxy-icon=hidden
-theme = "oxocarbon"
+theme = "oxocarbon-twilight"
 window-colorspace="display-p3"
-custom-shader-animation=false
 font-thicken=true
-bell-features = no-system,no-audio,no-attention,no-title
-mouse-hide-while-typing = true
-#window-padding-balance = true
+selection-invert-fg-bg = true
+
+# Icon
+macos-icon = custom-style
+macos-icon-ghost-color = #23a9d5
+macos-icon-screen-color = #1c617b
+macos-icon-frame = "plastic"
+
+window-padding-color = background
+

@@ -204,5 +204,31 @@
 	{
 		"key": "cmd+r cmd+\\",
 		"command": "-workbench.action.splitEditorRight"
+	},
+	{
+		"key": "shift+cmd+b",
+		"command": "-workbench.action.tasks.build",
+		"when": "taskCommandsRegistered"
+	},
+	{
+		"key": "shift+cmd+b",
+		"command": "workbench.action.toggleAuxiliaryBar"
+	},
+	{
+		"key": "alt+cmd+b",
+		"command": "-workbench.action.toggleAuxiliaryBar"
+	},
+	{
+		"key": "ctrl+alt+-",
+		"command": "workbench.action.terminal.fontZoomOut",
+		"when": "terminalProcessSupported"
+	},
+	{
+		"key": "ctrl+alt+=",
+		"command": "workbench.action.terminal.fontZoomIn"
+	},
+	{
+		"key": "ctrl+alt+0",
+		"command": "workbench.action.terminal.fontZoomReset"
 	}
 ]

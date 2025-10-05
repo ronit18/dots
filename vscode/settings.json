@@ -1,3 +1,9 @@
+// ██████   ██████  ███    ██ ██ ████████   ██████   █████  ███    ██ ██████  ██   ██ ██
+// ██   ██ ██    ██ ████   ██ ██    ██     ██       ██   ██ ████   ██ ██   ██ ██   ██ ██
+// ██████  ██    ██ ██ ██  ██ ██    ██     ██   ███ ███████ ██ ██  ██ ██   ██ ███████ ██
+// ██   ██ ██    ██ ██  ██ ██ ██    ██     ██    ██ ██   ██ ██  ██ ██ ██   ██ ██   ██ ██
+// ██   ██  ██████  ██   ████ ██    ██      ██████  ██   ██ ██   ████ ██████  ██   ██ ██
+
 {
 	"editor.insertSpaces": false,
 	"editor.mouseWheelZoom": false,
@@ -18,9 +24,12 @@
 	"github.gitProtocol": "ssh",
 	"editor.selectionHighlight": false,
 	"editor.suggest.snippetsPreventQuickSuggestions": false,
-	"npm.packageManager": "pnpm",
+	"eslint.packageManager": "yarn",
+	"npm.packageManager": "yarn",
+	"vim.easymotionMarkerooundColor": "#020202",
 	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 	"prettier.useTabs": true,
+
 	"emmet.includeLanguages": {
 		"javascript": "javascriptreact"
 	},
@@ -46,10 +55,13 @@
 		"*.html": "html",
 		"*.js": "javascript"
 	},
+
 	"git.confirmSync": false,
 	"git.showPushSuccessNotification": true,
 	"editor.suggestSelection": "first",
+
 	"terminal.integrated.gpuAcceleration": "on",
+
 	"vim.insertModeKeyBindings": [
 		{
 			"before": ["j", "k"],
@@ -58,6 +70,16 @@
 		{
 			"before": ["k", "j"],
 			"after": ["<esc>"]
+		}
+	],
+	"vim.visualModeKeyBindings": [
+		{
+			"before": [">"],
+			"after": [">", "g", "v"]
+		},
+		{
+			"before": ["<"],
+			"after": ["<", "g", "v"]
 		}
 	],
 	"vim.normalModeKeyBindingsNonRecursive": [
@@ -69,14 +91,17 @@
 			"before": ["<leader>", "x"],
 			"commands": ["editor.action.close"]
 		},
+
 		{
 			"before": ["<leader>", "s"],
 			"commands": ["workbench.action.files.save"]
 		},
+
 		{
 			"before": ["<C-n>"],
 			"commands": [":nohl"]
 		},
+
 		{
 			"before": ["K"],
 			"commands": ["lineBreakInsert"],
@@ -89,6 +114,14 @@
 		{
 			"before": ["<leader>", "e"],
 			"commands": ["workbench.action.toggleSidebarVisibility"]
+		},
+		{
+			"before": ["<leader>", "<leader>", "<leader>"],
+			"commands": ["workbench.view.explorer"]
+		},
+		{
+			"before": ["<leader>", "f"],
+			"commands": ["revealInExplorer"]
 		},
 		{
 			"before": ["<leader>", "h"],
@@ -112,7 +145,9 @@
 		"<C-k>": false,
 		"<C-y>": false
 	},
+
 	"editor.minimap.scale": 2,
+	"settingsSync.ignoredExtensions": ["eyhn.vscode-vibrancy"],
 	"[jsonc]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -125,7 +160,9 @@
 	"gitlens.advanced.messages": {
 		"suppressFileNotUnderSourceControlWarning": true
 	},
+
 	"window.titleSeparator": " - ",
+
 	"vim.smartRelativeLine": true,
 	"editor.renderWhitespace": "none",
 	"editor.renderControlCharacters": false,
@@ -136,6 +173,8 @@
 	"git.enableSmartCommit": true,
 	"editor.occurrencesHighlight": "off",
 	"material-icon-theme.hidesExplorerArrows": true,
+	"settingsSync.ignoredSettings": ["terminal.integrated.fontFamily"],
+
 	"editor.unicodeHighlight.allowedLocales": {
 		"es": true
 	},
@@ -146,12 +185,26 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.formatOnType": true,
 		"editor.formatOnSave": true
 	},
 	"editor.cursorSmoothCaretAnimation": "on",
 	"workbench.list.smoothScrolling": true,
 	"editor.smoothScrolling": true,
 	"terminal.integrated.smoothScrolling": true,
+	"[dart]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true,
+		"editor.rulers": [80],
+		"editor.selectionHighlight": false,
+		"editor.suggest.snippetsPreventQuickSuggestions": false,
+		"editor.suggestSelection": "first",
+		"editor.tabCompletion": "onlySnippets",
+		"editor.wordBasedSuggestions": "off"
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
 	"explorer.confirmDelete": false,
 	"git.autofetch": true,
 	"workbench.tips.enabled": false,
@@ -167,8 +220,12 @@
 	"editor.stickyTabStops": false,
 	"workbench.reduceMotion": "off",
 	"debug.console.acceptSuggestionOnEnter": "on",
+	"window.menuBarVisibility": "hidden",
 	"prettier.singleQuote": true,
 	"editor.cursorBlinking": "expand",
+	"[cpp]": {
+		"editor.defaultFormatter": "ms-vscode.cpptools"
+	},
 	"terminal.integrated.env.linux": {},
 	"editor.inlineSuggest.enabled": true,
 	"diffEditor.ignoreTrimWhitespace": false,
@@ -178,40 +235,69 @@
 		"markdown": true,
 		"scminput": false
 	},
+	"[prisma]": {
+		"editor.defaultFormatter": "Prisma.prisma"
+	},
 	"editor.inlayHints.enabled": "offUnlessPressed",
+	"window.customMenuBarAltFocus": false,
+	"[csharp]": {
+		"editor.defaultFormatter": "ms-dotnettools.csharp"
+	},
 	"editor.guides.highlightActiveIndentation": "always",
 	"workbench.sideBar.location": "right",
+	"workbench.layoutControl.enabled": false,
 	"workbench.editor.empty.hint": "hidden",
 	"editor.minimap.size": "fit",
 	"editor.minimap.showSlider": "always",
-	"editor.minimap.enabled": false,
 	"editor.stickyScroll.enabled": false,
 	"workbench.iconTheme": "material-icon-theme",
+	"[go]": {
+		"editor.defaultFormatter": "golang.go"
+	},
 	"terminal.integrated.mouseWheelZoom": true,
 	"window.commandCenter": false,
-	"workbench.colorTheme": "oXocarbonix-twilight",
-	"cursor.cpp.disabledLanguages": ["scminput"],
-	"explorer.fileNesting.patterns": {
-		"*.ts": "${capture}.js",
-		"*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-		"*.jsx": "${capture}.js",
-		"*.tsx": "${capture}.ts",
-		"tsconfig.json": "tsconfig.*.json",
-		"package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
-		"*.sqlite": "${capture}.${extname}-*",
-		"*.db": "${capture}.${extname}-*",
-		"*.sqlite3": "${capture}.${extname}-*",
-		"*.db3": "${capture}.${extname}-*",
-		"*.sdb": "${capture}.${extname}-*",
-		"*.s3db": "${capture}.${extname}-*"
+	"[terraform]": {
+		"editor.defaultFormatter": "hashicorp.terraform"
 	},
-	"geminicodeassist.project": "",
-	"geminicodeassist.inlineSuggestions.enableAuto": true,
+	"workbench.colorTheme": "oXocarbonix-twilight",
+	"github.copilot.nextEditSuggestions.enabled": true,
+	"gitlens.ai.model": "gitkraken",
+	"gitlens.ai.vscode.model": "copilot:claude-3.7-sonnet-thought",
+	"gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
 	"diffEditor.codeLens": true,
-	"workbench.editorAssociations": {
-		"*.copilotmd": "vscode.markdown.preview.editor",
-		"*.sql": "default"
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"editor.fontFamily": "Menlo,  Monaco, 'Courier New', monospace",
+	"workbench.activityBar.location": "top",
+	"git.openRepositoryInParentFolders": "always",
+	"workbench.startupEditor": "none",
+	"go.toolsManagement.autoUpdate": true,
+	"terminal.integrated.env.osx": {
+		"Q_NEW_SESSION": "1"
+	},
+	"docker.extension.enableComposeLanguageServer": false,
+	"editor.minimap.enabled": false,
+	"editor.scrollbar.verticalScrollbarSize": 7,
+	"editor.scrollbar.horizontalScrollbarSize": 7,
+	"chat.agent.maxRequests": 100,
+	"github.copilot.chat.azureModels": {},
+	"gitlens.ai.modelOptions.temperature": 0.3,
+	"github.copilot.chat.byok.ollamaEndpoint": "",
+	"github.copilot.chat.agent.thinkingTool": true,
+	"github.copilot.chat.alternateGptPrompt.enabled": true,
+	"scm.defaultViewMode": "tree",
+	"[dockercompose]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.autoIndent": "advanced",
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": false,
+			"strings": true
+		},
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"[github-actions-workflow]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
 	},
 	"terminal.integrated.fontSize": 13
 }
-

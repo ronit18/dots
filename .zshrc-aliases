@@ -51,9 +51,9 @@ alias dlog="docker logs -f"
 alias rmcontainer='docker container rm -f $(docker container ls -aq)'
 
 # list
-alias ls='eza -a --icons --color=always --group-directories-first'
-alias la='eza --icons --color=always'
-alias ll='eza -S -lag --icons --color=always --group-directories-first --octal-permissions'
+alias ls='eza -a --color=always --group-directories-first'
+alias la='eza  --color=always'
+alias ll='eza -S -lag --color=always --group-directories-first --octal-permissions'
 alias l='ls'
 alias lt='eza --level=2 --git -aT --color=always --group-directories-first' # tree listing
 alias l.='eza --git -a | egrep "^\."'

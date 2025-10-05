@@ -19,6 +19,12 @@ alias c='code '
 alias dev='cd ~/usr/'
 alias usr='cd ~/usr/'
 
+# variables
+set -Ux tmp ~/usr/tmp
+set -Ux usr ~/usr/
+set -Ux gh ~/usr/code
+set -Ux config ~/.config
+
 # Git aliases
 alias gs='git status'
 alias gpa='git add -p'
@@ -54,7 +60,7 @@ alias dlog="docker logs -f"
 alias rmcontainer='docker container rm -f $(docker container ls -aq)'
 
 # list
-alias ls='eza -a --icons --color=always --group-directories-first'
+alias ls='eza -a --icons --color=auto --group-directories-first'
 alias la='eza --icons --color=always'
 alias ll='eza -S -lag --icons --color=always --group-directories-first --octal-permissions'
 alias l='ls'
@@ -99,11 +105,12 @@ alias grep='grep --color=auto'
 alias flushdns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ipa="ifconfig | grep 'inet ' | grep -v 127.0.0.1"
 alias df="df -h"
-alias brewup="brew update && brew upgrade && brew cleanup && brew autoremove" # Update Homebrew
+alias brewup="brew update && brew upgrade && brew cleanup && brew autoremove && brew cleanup -s" # Update Homebrew
 alias myip="curl ifconfig.me" # Get external IP
 alias findbig="find . -type f -size +100M"
 
-alias ports="sudo lsof -i -P -n | grep LISTEN" # List open ports
+alias ports="lsof -i -P -n | grep LISTEN" # List open ports
+alias sudoports="lsof -i -P -n | grep LISTEN" # List root open ports also
 alias whoison="arp -a"
 alias pyserve="python3 -m http.server"
 alias up="python3 -m http.server"

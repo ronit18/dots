@@ -35,10 +35,4 @@ if test -d "$HOME/.bun/bin"
     set --export PATH "$BUN_INSTALL/bin" $PATH
 end
 
-# pnpm
-set -gx PNPM_HOME /Users/ronitgandhi/Library/pnpm
-if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
-end
-
 zoxide init fish | source
