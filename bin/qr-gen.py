@@ -10,7 +10,7 @@ link = input("Link: ")
 
 qr = qrcode.QRCode(
     version=1,
-    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    error_correction=qrcode.ERROR_CORRECT_L,
     box_size=10,
     border=4,
 )
@@ -21,6 +21,11 @@ qr.make(fit=True)
 img = qr.make_image(fill_color="black", back_color="white")
 
 file_name = input("File name: ")
-img.save(file_name)
+
+# append .png if not present
+if not file_name.lower().endswith('.png'):
+    file_name += '.png'
+with open(file_name, 'wb') as f:
+    img.save(f)
 
 print(f"Successfully generated QR code and saved it as '{file_name}'")
