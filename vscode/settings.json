@@ -24,9 +24,7 @@
 	"github.gitProtocol": "ssh",
 	"editor.selectionHighlight": false,
 	"editor.suggest.snippetsPreventQuickSuggestions": false,
-	"eslint.packageManager": "yarn",
 	"npm.packageManager": "yarn",
-	"vim.easymotionMarkerooundColor": "#020202",
 	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 	"prettier.useTabs": true,
 
@@ -155,7 +153,6 @@
 	"material-icon-theme.folders.color": "#42a5f5",
 	"material-icon-theme.activeIconPack": "react_redux",
 	"material-icon-theme.opacity": 1,
-	"terminal.integrated.defaultProfile.windows": "Command Prompt",
 	"emmet.triggerExpansionOnTab": true,
 	"gitlens.advanced.messages": {
 		"suppressFileNotUnderSourceControlWarning": true
@@ -202,9 +199,7 @@
 		"editor.tabCompletion": "onlySnippets",
 		"editor.wordBasedSuggestions": "off"
 	},
-	"[svelte]": {
-		"editor.defaultFormatter": "svelte.svelte-vscode"
-	},
+
 	"explorer.confirmDelete": false,
 	"git.autofetch": true,
 	"workbench.tips.enabled": false,
@@ -220,29 +215,15 @@
 	"editor.stickyTabStops": false,
 	"workbench.reduceMotion": "off",
 	"debug.console.acceptSuggestionOnEnter": "on",
-	"window.menuBarVisibility": "hidden",
 	"prettier.singleQuote": true,
 	"editor.cursorBlinking": "expand",
-	"[cpp]": {
-		"editor.defaultFormatter": "ms-vscode.cpptools"
-	},
+
 	"terminal.integrated.env.linux": {},
 	"editor.inlineSuggest.enabled": true,
 	"diffEditor.ignoreTrimWhitespace": false,
-	"github.copilot.enable": {
-		"*": true,
-		"plaintext": true,
-		"markdown": true,
-		"scminput": false
-	},
-	"[prisma]": {
-		"editor.defaultFormatter": "Prisma.prisma"
-	},
+
 	"editor.inlayHints.enabled": "offUnlessPressed",
-	"window.customMenuBarAltFocus": false,
-	"[csharp]": {
-		"editor.defaultFormatter": "ms-dotnettools.csharp"
-	},
+
 	"editor.guides.highlightActiveIndentation": "always",
 	"workbench.sideBar.location": "right",
 	"workbench.layoutControl.enabled": false,
@@ -259,13 +240,11 @@
 	"[terraform]": {
 		"editor.defaultFormatter": "hashicorp.terraform"
 	},
-	"workbench.colorTheme": "oXocarbonix-twilight",
 	"github.copilot.nextEditSuggestions.enabled": true,
-	"gitlens.ai.model": "gitkraken",
-	"gitlens.ai.vscode.model": "copilot:claude-3.7-sonnet-thought",
+	"gitlens.ai.model": "vscode",
+	"gitlens.ai.vscode.model": "copilot:grok-code",
 	"gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
 	"diffEditor.codeLens": true,
-	"terminal.integrated.defaultProfile.osx": "zsh",
 	"editor.fontFamily": "Menlo,  Monaco, 'Courier New', monospace",
 	"workbench.activityBar.location": "top",
 	"git.openRepositoryInParentFolders": "always",
@@ -274,7 +253,6 @@
 	"terminal.integrated.env.osx": {
 		"Q_NEW_SESSION": "1"
 	},
-	"docker.extension.enableComposeLanguageServer": false,
 	"editor.minimap.enabled": false,
 	"editor.scrollbar.verticalScrollbarSize": 7,
 	"editor.scrollbar.horizontalScrollbarSize": 7,
@@ -299,5 +277,30 @@
 	"[github-actions-workflow]": {
 		"editor.defaultFormatter": "redhat.vscode-yaml"
 	},
-	"terminal.integrated.fontSize": 13
+	"terminal.integrated.fontSize": 13,
+	"workbench.colorTheme": "oXocarbonix",
+	"amp.url": "https://ampcode.com/",
+	"amp.tab.enabled": false,
+	"editor.wordBasedSuggestions": "off",
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": true,
+		"markdown": true,
+		"scminput": false
+	},
+	"github.copilot.chat.codeGeneration.useInstructionFiles": true,
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"python.analysis.typeCheckingMode": "basic",
+	"amp.mcpServers": {
+		"playwright": {
+			"command": "bunx",
+			"args": [
+				"-y",
+				"@playwright/mcp@latest",
+				"--headless",
+				"--isolated"
+			],
+			"env": {}
+		}
+	}
 }
