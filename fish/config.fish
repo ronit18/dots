@@ -37,13 +37,7 @@ if test -d "$HOME/.bun/bin"
     set --export PATH "$BUN_INSTALL/bin" $PATH
 end
 
+set --universal nvm_default_version lts
+
 # Initialize tools
 zoxide init fish | source
-
-# Carapace setup
-set -Ux CARAPACE_BRIDGES fish
-set -Ux CARAPACE_UNFILTERED 1
-set -Ux CARAPACE_MATCH 1
-
-#set -Ux fifc_editor nvim
-carapace _carapace | source
