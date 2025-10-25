@@ -1,7 +1,7 @@
 "$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
 
 [user]
-name = "ronit gandhi"
+name = "Ronit Gandhi"
 email = "ronitgandhi96@gmail.com"
 
 [ui]
@@ -12,7 +12,7 @@ diff-editor = ":builtin"
 revsets.immutable-heads = "none()"
 
 [aliases]
-la = ["log", "-r", "::", "--color=always", "--template", 'commit_id.short() ++ " " ++ description.first_line()']
+bs = ["bookmark", "s", "-r", "@-", "--allow-backwards"]
 gf = ["git", "fetch"]
 bc = ["bookmark", "create"]
-
+ggp = ["git", "push", "--bookmark"]
