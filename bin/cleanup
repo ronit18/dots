@@ -1,67 +1,77 @@
 #!/usr/bin/env bash
 
-read -p "Are you sure you want to perform a complete macOS cleanup? This cannot be undone. [y/N]: " -n 1 -r
+read -p "WARNING: This script will perform a COMPLETE macOS cleanup, including deleting caches, logs, and backups. This action is irreversible. Are you ABSOLUTELY sure you want to proceed? [y/N]: " -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-  echo "Cleanup canceled."
-  exit 1
+    echo "Cleanup canceled."
+    exit 1
 fi
 
-# Empty Trash
-echo "Emptying Trash on all mounted volumes and the main HDD..."
+# --- Trash Cleanup ---
+echo "Emptying Trash on all volumes..."
 sudo rm -rf /Volumes/*/.Trashes &>/dev/null
 sudo rm -rf ~/.Trash/* &>/dev/null
 
-# Clear System Log Files
+# --- System Log Files (More Specific) ---
 echo "Clearing system log files..."
-sudo rm -rf /private/var/log/asl/*.asl &>/dev/null
-sudo rm -rf /Library/Logs/DiagnosticReports/* &>/dev/null
-sudo rm -rf /Library/Logs/* &>/dev/null
+sudo rm -rf /private/var/log/asl/*.asl &>/dev/null        # ASL logs
+sudo rm -rf /Library/Logs/DiagnosticReports/* &>/dev/null # Diagnostic reports
+sudo rm -rf /Library/Logs/CrashReporter/* &>/dev/null     # Crash reporter logs
+# Consider removing: sudo rm -rf /Library/Logs/*  # Be cautious with broad log deletion
+# Consider removing: sudo rm -rf /var/log/* # Be very cautious with /var/log
+
+# --- Mail Logs ---
 rm -rf ~/Library/Containers/com.apple.mail/Data/Library/Logs/Mail/* &>/dev/null
+
+# --- Simulator Logs ---
 rm -rf ~/Library/Logs/CoreSimulator/* &>/dev/null
 
-# Cleanup iOS Applications
+# --- iOS Applications ---
 echo "Cleaning up iOS applications..."
 rm -rf ~/Music/iTunes/iTunes\ Media/Mobile\ Applications/* &>/dev/null
 
-# Remove iOS Device Backups
+# --- iOS Device Backups ---
 echo "Removing iOS device backups..."
 rm -rf ~/Library/Application\ Support/MobileSync/Backup/* &>/dev/null
 
-# Cleanup XCode Derived Data and Archives
-echo "Cleaning up XCode derived data and archives..."
+# --- XCode Cleanup ---
+echo "Cleaning up XCode data..."
 rm -rf ~/Library/Developer/Xcode/DerivedData/* &>/dev/null
 rm -rf ~/Library/Developer/Xcode/Archives/* &>/dev/null
 
-# Cleanup Homebrew Cache
+# --- Homebrew Cleanup ---
 echo "Cleaning up Homebrew cache..."
-brew cleanup --force -s &>/dev/null
-rm -rf /Library/Caches/Homebrew/* &>/dev/null
+brew cleanup --force -s &>/dev/null # Already aggressive cleanup
+# rm -rf /Library/Caches/Homebrew/* &>/dev/null # Potentially redundant
 brew tap --repair &>/dev/null
 
-# Cleanup Ruby Gems
-echo "Cleaning up old versions of Ruby gems..."
+# --- Ruby Gems Cleanup ---
+echo "Cleaning up Ruby gems..."
 gem cleanup &>/dev/null
 
-# Cleanup npm Cache
-echo "Cleaning up npm cache and old modules..."
-npm cache clean --force &>/dev/null
-rm -rf ~/.npm &>/dev/null
+# --- npm Cleanup ---
+echo "Cleaning up npm cache..."
+npm cache clean --force &>/dev/null # Already forceful
+# rm -rf ~/.npm &>/dev/null # Potentially redundant and risky
 
-# Cleanup Safari Cache
-echo "Cleaning up Safari cache..."
-rm -rf ~/Library/Caches/com.apple.Safari &>/dev/null
-rm -rf ~/Library/Safari/* &>/dev/null
+# --- Mail Downloads Cleanup ---
+echo "Cleaning up Mail Downloads..."
+rm -rf ~/Library/Mail\ Downloads # Mail Downloads
 
-# Clear Temporary Files
-echo "Clearing temporary files..."
-sudo rm -rf /private/var/folders/* &>/dev/null
+# --- Quick Look Cache Reset ---
+echo "Resetting Quick Look cache..."
+qlmanage -r cache &>/dev/null
+qlmanage -r thumbnails &>/dev/null
 
-# Clear User Cache
+# --- Temporary Files (Cautious Approach - Consider Removing Entirely) ---
+echo "Clearing temporary files (cautious)..."
+# sudo rm -rf /private/var/folders/* &>/dev/null # Very broad, consider removing
+
+# --- User Cache Cleanup ---
 echo "Clearing user cache files..."
 rm -rf ~/Library/Caches/* &>/dev/null
 
-# Purge inactive memory
+# --- Purge Inactive Memory ---
 echo "Purging inactive memory..."
 sudo purge &>/dev/null
 

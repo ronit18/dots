@@ -1,21 +1,24 @@
 shell-integration = fish
-font-size = 15
+
+font-size = 14
 font-family = "Geist Mono"
 font-feature=-liga
+font-thicken=true
+
+
 desktop-notifications=false
 bell-features = no-system,no-audio,no-attention,no-title
+
 title=👻
 macos-titlebar-proxy-icon=hidden
-theme = "oxocarbon-twilight"
-window-colorspace="display-p3"
-font-thicken=true
+
+theme = "Carbonfox"
 selection-invert-fg-bg = true
 
-# Icon
 macos-icon = custom-style
 macos-icon-ghost-color = #23a9d5
 macos-icon-screen-color = #1c617b
 macos-icon-frame = "plastic"
 
 window-padding-color = background
-
+window-colorspace="display-p3"

@@ -18,21 +18,32 @@ set -x PATH $HOME/.local/bin /opt/homebrew/bin $PATH
 
 # History settings
 set -U fish_history_limit 5000
-set -U fish_history_file ~/.fish_history
 
-# Use the Pure prompt
+# Pure prompt settings
 set --universal pure_color_system_time pure_color_mute
 set --universal pure_check_for_new_release false
 set --universal pure_enable_single_line_prompt true
-set --universal pure_check_for_new_release false
 set --universal pure_color_current_directory '#FA7CA6'
 
+# Editor
+set -gx EDITOR nvim
+
+# Load aliases
 source ~/.config/fish/alias.fish
 
-# bun
+# Bun
 if test -d "$HOME/.bun/bin"
     set --export BUN_INSTALL "$HOME/.bun"
     set --export PATH "$BUN_INSTALL/bin" $PATH
 end
 
+# Initialize tools
 zoxide init fish | source
+
+# Carapace setup
+set -Ux CARAPACE_BRIDGES fish
+set -Ux CARAPACE_UNFILTERED 1
+set -Ux CARAPACE_MATCH 1
+
+#set -Ux fifc_editor nvim
+carapace _carapace | source

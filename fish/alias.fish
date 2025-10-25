@@ -120,6 +120,8 @@ alias ytd='yt-download '
 alias mvenv 'uv venv .venv'
 alias svenv 'source .venv/bin/activate.fish'
 
+alias qr-gen 'uv run ~/.local/bin/qr-gen.py'
+
 function sshub
     ssh -i ~/.ssh/.pem/aws-ec2.pem ubuntu@$argv
 end
