@@ -1,3 +1,6 @@
+# Initialize zsh completion system FIRST
+autoload -Uz compinit && compinit
+
 PROMPT='%F{white}[%F{#ff6ea0}%n%F{white}@%F{#53cf83}%m %F{#9AA0A6}%~%F{white}]$ %f'
 
 # Path setup
@@ -20,10 +23,11 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-#eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Load aliases
 source ~/.zshrc-aliases
 
-
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
